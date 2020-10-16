@@ -1,19 +1,19 @@
 export const Pools = [
     {
         poolAddresses: {
-            1: '0xD46d3041D1aFCedd3532fAC37aedEa151FA93270',
+            56: '0xC0603c3378581c2F22265952559d7D2CCAAD0338',
         },
         stakingTokenAddresses: {
-            1: '0xae66bea480f7a6c91f07c58f2aee185883558fb8',
+            56: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
         },
         acceleratorAddresses: {
-            1: '0x7377ED43F5A79cc89A5cE5D6632764a3494996B7',
+            56: '0x7377ED43F5A79cc89A5cE5D6632764a3494996B7'
         },
         name: 'EDC',
         symbol: 'EDC',
         tokenSymbol: 'EDC',
         isWBNB: false,
-        icon: 'edc',
+        icon: 'y3d',
         nftSymbol: 'TEST',
         magnification: 1,
     }
