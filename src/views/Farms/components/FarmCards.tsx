@@ -12,7 +12,9 @@ import { Farm } from '../../../contexts/Farms'
 import useAllStakedValue, {
   StakedValue,
 } from '../../../hooks/useAllStakedValue'
+import { useEDCPrice } from '../../../hooks/useEDCPrice'
 import useFarms from '../../../hooks/useFarms'
+import { usePoolApy } from '../../../hooks/usePoolApy'
 import { useRewardPerToken } from '../../../hooks/useRewardPerToken';
 import useSushi from '../../../hooks/useSushi'
 import useTotalSupply from '../../../hooks/useTotalSupply'
@@ -94,7 +96,9 @@ interface FarmCardProps {
 }
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
-  const { apy } = useRewardPerToken(farm.poolAddress)
+  const { apy, totalStake } = usePoolApy(farm.poolAddress)
+  const { priceInUSDT } = useEDCPrice()
+  // const totalStakedInUSDT = new BigNumber(priceInUSDT.toString()).div(1e6).times(totalStake).div(1e18).toFixed(6)
   // const apy = ((Number(rewardPerToken) / (1e18)) * 100).toFixed(2)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [startTime, setStartTime] = useState(0)
@@ -191,12 +195,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <Spacer />
             <StyledDetails style={{ marginTop: 0 }}>
               <StyledDetail>
-                <StyledDetailSpan>Total Liquidity</StyledDetailSpan>
-                <StyledDetailSpan>$41,270,688</StyledDetailSpan>
-              </StyledDetail>
-              <StyledDetail>
                 <StyledDetailSpan>Total Staked</StyledDetailSpan>
-                <StyledDetailSpan>{ getBalanceNumber(totalSupply).toFixed(4) } {symbol}</StyledDetailSpan>
+                <StyledDetailSpan> { (Number(totalStake) / 1e18).toFixed(6) } {farm.stakingToken.toUpperCase()}</StyledDetailSpan>
               </StyledDetail>
             </StyledDetails>
           </StyledContent>
