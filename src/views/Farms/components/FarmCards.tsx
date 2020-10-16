@@ -12,15 +12,11 @@ import { Farm } from '../../../contexts/Farms'
 import useAllStakedValue, {
   StakedValue,
 } from '../../../hooks/useAllStakedValue'
-import { useEDCPrice } from '../../../hooks/useEDCPrice'
 import useFarms from '../../../hooks/useFarms'
 import { usePoolApy } from '../../../hooks/usePoolApy'
-import { useRewardPerToken } from '../../../hooks/useRewardPerToken';
 import useSushi from '../../../hooks/useSushi'
-import useTotalSupply from '../../../hooks/useTotalSupply'
 import { getEarned, getMasterChefContract } from '../../../sushi/utils'
 import { bnToDec } from '../../../utils'
-import { getBalanceNumber } from '../../../utils/formatBalance'
 
 interface FarmWithStakedValue extends Farm, StakedValue {
   apy: BigNumber
@@ -97,7 +93,6 @@ interface FarmCardProps {
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   const { apy, totalStake } = usePoolApy(farm.poolAddress)
-  const { priceInUSDT } = useEDCPrice()
   // const totalStakedInUSDT = new BigNumber(priceInUSDT.toString()).div(1e6).times(totalStake).div(1e18).toFixed(6)
   // const apy = ((Number(rewardPerToken) / (1e18)) * 100).toFixed(2)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -107,10 +102,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   const [imagePath, setImagePath ] = useState('')
 
   const { account } = useWallet()
-  const { stakingTokenAddress, pid, name: symbol } = farm
+  const { stakingTokenAddress } = farm
   const sushi = useSushi()
-
-  const totalSupply = useTotalSupply(pid)
 
   const renderer = (countdownProps: CountdownRenderProps) => {
     const { hours, minutes, seconds } = countdownProps
