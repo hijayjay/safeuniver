@@ -30,7 +30,7 @@ export const Pools = [
         name: 'WETH',
         symbol: 'WETH',
         tokenSymbol: 'WETH',
-        isWBNB: true,
+        isWBNB: false,
         icon: 'eth',
         nftSymbol: 'TEST',
         magnification: 1,
