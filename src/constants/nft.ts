@@ -1,13 +1,13 @@
 export const NFTs = [
   {
     addresses: {
-        1: '0xdf01427D5B686282BC5c0d4b7a75EC4D7F9078A7',
+        56: '0x3a4Ef85EB740f18566D2Eaf36232C563c686C772',
     },
-    name: 'Test NFT',
-    symbol: 'TEST',
+    name: 'Universe',
+    symbol: 'Universe',
   },
 ]
 
 export const HoldingEnumerators = {
-    1: '0x97CA98a273CF3EEF77123D8AcD3A49188a1f826B',
+    56: '0x3a4Ef85EB740f18566D2Eaf36232C563c686C772',
 }
