@@ -14,7 +14,7 @@ export const Pools = [
         tokenSymbol: 'Universe',
         isWBNB: 'false',
         icon: 'BUSD'
-        nftSymbol: 'TEST',
-        magnification: 1,
+        nftSymbol: 'Universe',
+        magnification: '56',
     }
 ]
