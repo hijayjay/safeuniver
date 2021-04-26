@@ -1,19 +1,19 @@
 export const Pools = [
     {
         poolAddresses: {
-            1: '0xD46d3041D1aFCedd3532fAC37aedEa151FA93270',
+            56: '0x3a4Ef85EB740f18566D2Eaf36232C563c686C772',
         },
         stakingTokenAddresses: {
-            1: '0xae66bea480f7a6c91f07c58f2aee185883558fb8',
+            56'0x3a4Ef85EB740f18566D2Eaf36232C563c686C772',
         },
         acceleratorAddresses: {
-            1: '0x7377ED43F5A79cc89A5cE5D6632764a3494996B7',
+            56'0x3a4Ef85EB740f18566D2Eaf36232C563c686C772',
         },
-        name: 'EDC',
-        symbol: 'EDC',
-        tokenSymbol: 'EDC',
+        name: 'Universe',
+        symbol: 'Universe',
+        tokenSymbol: 'Universe',
         isWBNB: false,
-        icon: 'edc',
+        icon: 'BUSD
         nftSymbol: 'TEST',
         magnification: 1,
     }
